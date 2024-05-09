@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script nonce='71bfbfaa-11f2-40fa-8652-cceeb20bf162'>
+        !function () { "use strict"; function t(t, n) { let e; return (...o) => { clearTimeout(e), e = setTimeout((() => { t(...o) }), n) } } class n { constructor() { this.callbacks = [], window.addEventListener("DOMContentLoaded", (() => this.onDOMContentLoaded())) } onDOMContentLoaded() { this.callbacks.sort(((t, n) => t.priority - n.priority)).forEach((({ callback: t }) => t())) } runOnLoad(t) { "loading" === document.readyState ? this.callbacks.push(t) : t.callback() } } function e(t, e = Number.MAX_VALUE) { var o; (window.canva_scriptExecutor = null !== (o = window.canva_scriptExecutor) && void 0 !== o ? o : new n).runOnLoad({ callback: t, priority: e }) } class o { constructor(t) { this.items = [], this.previousWidth = document.documentElement.clientWidth, this.previousHeight = window.innerHeight; const n = t((() => this.onWindowResize()), 100); window.addEventListener("resize", n) } onWindowResize() { const t = document.documentElement.clientWidth, n = window.innerHeight, e = this.previousWidth !== t, o = this.previousHeight !== n; this.items.forEach((t => { const n = () => { t.callback(), t.executed = !0 }; (!t.executed || e && t.options.runOnWidthChange || o && t.options.runOnHeightChange) && n() })), this.previousWidth = t, this.previousHeight = n } runOnResize(t, n) { this.items.push({ callback: t, options: n, executed: n.runOnLoad }), this.items.sort(((t, n) => t.options.priority - n.options.priority)), n.runOnLoad && e(t, n.priority) } } function i(n, e, i = t) { var r; (window.canva_debounceResize = null !== (r = window.canva_debounceResize) && void 0 !== r ? r : new o(i)).runOnResize(n, { runOnLoad: !1, runOnWidthChange: !0, runOnHeightChange: !1, priority: Number.MAX_VALUE, ...e }) } const r = "--minfs", c = "--rzf", a = "--rfso", s = "--bfso"; function u(t, n, e = .001) { return Math.abs(t - n) < e } function d(t, n) { return window.getComputedStyle(t).getPropertyValue(n) } function l(t, n, e) { t.style.setProperty(n, e) } function m(t, n) { const e = document.createElement("div"); e.style.setProperty(t, n), document.body.append(e); const o = d(e, t); return e.remove(), o } function f() { const t = function () { const t = parseFloat(m("font-size", "0.1px")); return t > 1 ? t : 0 }(), n = function (t) { const n = 2 * Math.max(t, 1); return n / parseFloat(m("font-size", `${n}px`)) }(t); if (function (t) { if (0 === t) return; l(document.documentElement, r, `${t}px`), i((() => { const n = 100 * t, { clientWidth: e } = document.documentElement; l(document.documentElement, c, n > e ? (e / n).toPrecision(4) : null) }), { runOnLoad: !0 }) }(t * Math.max(1, n)), u(n, 1)) return; const e = u(parseFloat(d(document.documentElement, "font-size")), parseFloat(m("grid-template-columns", "1rem"))); l(document.documentElement, e ? a : s, n.toPrecision(4)) } function h() { document.querySelectorAll("img, image, video, svg").forEach((t => t.addEventListener("contextmenu", (t => t.preventDefault())))) } const p = t => { const n = { type: "CLICKED_LINK", link: t.currentTarget.getAttribute("href") }; navigator.sendBeacon("_api/analytics/events", JSON.stringify(n)) }; function g() { [...document.querySelectorAll("a[href][data-interstitial-link]")].forEach((t => { t.addEventListener("click", p) })) } const v = "--sbw", w = "--inner1Vh"; function y(t, n, e) { t.style.setProperty(n, e) } function E() { y(document.documentElement, w, window.innerHeight / 100 + "px"), function () { const t = window.innerWidth - document.documentElement.clientWidth; y(document.documentElement, v, t >= 0 ? `${t}px` : null) }() } var b; const O = "undefined" != typeof window ? null === (b = window.navigator) || void 0 === b ? void 0 : b.userAgent : void 0; const L = !(!O || (A = O, !A.match(/AppleWebKit\//) || A.match(/Chrome\//) || A.match(/Chromium\//))); var A; function x() { document.querySelectorAll("svg").forEach((t => t.style.background = "url('data:image/png;base64,')")) } let C; function W() { C || (C = Array.from(document.querySelectorAll("foreignObject")).filter((t => 0 === t.getBoundingClientRect().width))); const t = function () { const t = document.createElement("div"); t.style.fontSize = "100vw", document.body.append(t); const n = parseFloat(window.getComputedStyle(t).fontSize); return t.remove(), n / window.innerWidth }(); Array.from(C).forEach((n => function (t) { return new Promise(((n, e) => { const o = t.querySelector("img"); o && !o.complete ? (o.addEventListener("load", (() => n())), o.addEventListener("error", (() => e()))) : n() })) }(n).finally((() => function (t, n) { const e = Array.from(t.children); e.forEach(((t, n) => { if (t.hasAttribute("data-foreign-object-container")) t.style.transformOrigin = "", t.style.transform = ""; else { const o = document.createElement("div"); o.setAttribute("data-foreign-object-container", ""), t.insertAdjacentElement("beforebegin", o), t.remove(), o.append(t), e[n] = o } })); const o = t.getScreenCTM(); if (!o) return; const { a: i, b: r, c: c, d: a } = o.scale(n); e.forEach((t => { if (!t.hasAttribute("data-foreign-object-container")) return; const { style: n } = t; n.transformOrigin = "0px 0px", n.transform = `matrix(${i}, ${r}, ${c}, ${a}, 0, 0)` })) }(n, t))))) } [function () { e(f) }, function () { i(E, { runOnLoad: !0, runOnHeightChange: !0, priority: 1 }) }, function () { L && i(W, { runOnLoad: !0 }) }, function () { L && e(x) }, function () { e(h) }, function () { e(g) }].forEach((t => t())) }();
+    </script>
+</head>
+
+<body>
+    <div id="root">
+        <nav
+            style="position:sticky;top:0px;font-family:YAEw1pyVaO0-0, -apple-system, BlinkMacSystemFont, sans-serif;display:flex;justify-content:flex-end;align-items:center;background-color:#ffffff;border-bottom:1px solid rgba(0, 0, 0, 0.07);z-index:1;text-overflow:ellipsis;height:50px;box-sizing:border-box;">
+            <input id="menuToggle" type="checkbox" style="display:none;"></input><label id="menuButton"
+                for="menuToggle">
+                <div id="menuButtonIcon" style="width:24px;padding:8px;"><svg viewBox="0 0 24.0 24.0"
+                        preserveAspectRatio="none" style="background:url(%27data_image/png%3bbase64%2c%27.html);">
+                        <path
+                            d="M5.75 5.25h12.5a.75.75 0 1 1 0 1.5H5.75a.75.75 0 0 1 0-1.5zm0 6h12.5a.75.75 0 1 1 0 1.5H5.75a.75.75 0 1 1 0-1.5zm0 6h12.5a.75.75 0 1 1 0 1.5H5.75a.75.75 0 1 1 0-1.5z">
+                        </path>
+                    </svg>
+                </div>
+            </label>
+            <ul id="verticalMenu">
+                <li class="navMenuLink"><a class="navMenuLinkContent" href="index.html#home" title="Home"
+                        target="_self">Home</a></li>
+                <li class="navMenuLink"><a class="navMenuLinkContent" href="index.html#about" title="About"
+                        target="_self">About</a></li>
+                <li class="navMenuLink"><a class="navMenuLinkContent" href="index.html#services" title="Services"
+                        target="_self">Services</a></li>
+                <li class="navMenuLink"><a class="navMenuLinkContent" href="index.html#testimonials"
+                        title="Testimonials" target="_self">Testimonials</a></li>
+                <li class="navMenuLink"><a class="navMenuLinkContent" href="index.html#contact" title="Contact"
+                        target="_self">Contact</a></li>
+            </ul>
+            <ul id="horizontalMenu" style="margin:0;padding:0;visibility:hidden;">
+                <li class="navMenuLink"><a class="navMenuLinkContent" href="index.html#home" title="Home"
+                        target="_self">Home</a></li>
+                <li class="navMenuLink"><a class="navMenuLinkContent" href="index.html#about" title="About"
+                        target="_self">About</a></li>
+                <li class="navMenuLink"><a class="navMenuLinkContent" href="index.html#services" title="Services"
+                        target="_self">Services</a></li>
+                <li class="navMenuLink"><a class="navMenuLinkContent" href="index.html#testimonials"
+                        title="Testimonials" target="_self">Testimonials</a></li>
+                <li class="navMenuLink"><a class="navMenuLinkContent" href="index.html#contact" title="Contact"
+                        target="_self">Contact</a></li>
+            </ul>
+        </nav>
+        <a id="home" aria-hidden="true" style="visibility:hidden;"></a>
+        <section id="tKRiohVegcDQenGj"
+            style="position:relative;overflow:hidden;display:grid;align-items:center;grid-template-columns:auto 100rem auto;z-index:0;">
+            <div id="j3IPV0iOQ5JWvH0i"
+                style="grid-area:1 / 1 / 2 / 4;display:grid;position:absolute;min-height:100%;min-width:100%;">
+                <div id="modjPnIcwlFCbc5X" style="z-index:0;">
+                    <div id="apqcJI3CbaNUsDUU"
+                        style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
+                        <div id="D5RmcxCYj9K2YInd" style="width:100%;height:100%;opacity:1.0;">
+                            <div id="QIbuTXf38UT4Qi2w" class="video_container"
+                                style="background-color:#0c121c;opacity:1.0;transform:scale(1, 1);width:100%;height:100%;overflow:hidden;position:relative;">
+                                <div id="Cx5QC21vE1nKsQzY"
+                                    style="width:calc(100% * max(1, var(--scale-fill, 1)));height:calc(101.3828125% / min(1, var(--scale-fill, 1)));position:absolute;top:50%;left:50%;opacity:1.0;">
+                                    <video src="./assets/videos/12ebaaa4c4cce7700bbb796ad46521fd.mp4" playsinline=""
+                                        preload="auto" autoplay="" muted="" loop=""
+                                        style="width:100%; height:100%; display:block; object-fit:cover; object-position:50% 50%; transform:translate(-50%, -50%) rotate(0deg);">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="vFaJicu0DlViwZuq" style="display:grid;position:relative;grid-area:1 / 2 / 2 / 3;">
+                <div id="SCUiUUZCrHk0SgYP" style="z-index:4;">
+                    <div id="JPKaWOkGMYcrNfxb" style="padding-top:94.55155205%;transform:rotate(0deg);">
+                        <div id="PaxBj1L8l9YYw0EF" style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
+                            <svg id="E7V0X3TJW0gJzwMy" viewBox="0 0 64.0 60.513"
+                                style="width:100%;height:100%;opacity:1.0;overflow:hidden;position:absolute;top:0%;left:0%;background:url(%27data_image/png%3bbase64%2c%27.html);">
+                                <g id="mSCfSIjwd93QSWol" style="transform:scale(1, 1);">
+                                    <foreignobject id="yksQcUI9VnkZDm5Q" style="width:64px;height:60.513px;">
+                                        <div id="kTuWFEBH3NHUygeB">
+                                            <div id="sXfH1N05cFWKQQGg"
+                                                style="transform:scale(1, 1);transform-origin:32px 30.5px;"><img
+                                                    src="./assets/images/d716ad5b27ec1bdeeecbb8537440d41f.png" loading="lazy"
+                                                    sizes="(max-width: 375px) 41.58395951vw, (min-width: 375.05px) and (max-width: 480px) 32.48746836vw, (min-width: 480.05px) and (max-width: 768px) 20.30466773vw, (min-width: 768.05px) and (max-width: 1024px) 15.2285008vw, (min-width: 1024.05px) 11.41580148vw"
+                                                    style="transform:translate(-5.72723657px, 0px) rotate(0deg);transform-origin:37.72723657px 30.25649666px;width:75.45447314px;height:60.51299331px;display:block;opacity:1.0;object-fit:fill;">
+                                            </div>
+                                        </div>
+                                    </foreignobject>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div id="avcx7cOl17ppyogI" style="z-index:9;">
+                    <div id="b7ISVN7jgdrbIgue"
+                        style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
+                        <div id="lFpclE6zOBX9FvLo"
+                            style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                            <p id="ATvHDm88LMlC0hd6"
+                                style="color:#ffffff;font-family:YALBszL9wLA-0;line-height:1.39123006em;text-align:center;text-transform:uppercase;text-shadow:0em 0.0375em 0.159375em rgba(0, 0, 0, 0.325000);">
+                                <span id="sFe8hgfdvcW0yJNE" style="color:#ffffff;">TM MEDIA</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="oY0hB2wEN8UT4JAS" style="z-index:8;">
+                    <div id="gOKI47YYiPPeNbrk"
+                        style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
+                        <div id="JR5T4lg6jOs4m6rQ"
+                            style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                            <p id="ezBI1fCKfPE9X4sb"
+                                style="color:#ffffff;font-family:YALBszL9wLA-0;line-height:1.38637624em;text-align:center;text-transform:uppercase;text-shadow:0em 0.0375em 0.159375em rgba(0, 0, 0, 0.325000);">
+                                <span id="ANBTv6j7cheqqw0d" style="color:#ffffff;">We always keep the spirit</span><br>
+                            </p>
+                            <p id="Gdyw2YTEt7fPXMUR"
+                                style="color:#ffffff;font-family:YALBszL9wLA-0;line-height:1.38637624em;text-align:center;text-transform:uppercase;text-shadow:0em 0.0375em 0.159375em rgba(0, 0, 0, 0.325000);">
+                                <span id="QHvj1VyO7fgOQkuY" style="color:#ffffff;">&quot;Keep moving forward&quot; and
+                                    always uphold the sense of responsibility and prestige for partners.</span><br>
+                            </p>
+                            <p id="JMbPm0whfXDFWWC8"
+                                style="color:#ffffff;font-family:YALBszL9wLA-0;line-height:1.38637624em;text-align:center;text-transform:uppercase;text-shadow:0em 0.0375em 0.159375em rgba(0, 0, 0, 0.325000);white-space:pre;">
+                                <br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="YMyxdTbNlqpUI22N">
+                    <div id="q7uIQ6hZaL0LDpVp" style="display:grid;position:relative;">
+                        <div id="AIdjWCRRUO534zVp" style="display:grid;position:relative;grid-area:2 / 2 / 3 / 3;">
+                            <div id="L5dqqsIOyTRBDxhD" style="z-index:2;">
+                                <div id="AUHeHsYrSx9Qtd4K"
+                                    style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);"><svg
+                                        id="kFs4uqTyyIg5F5t8" viewBox="0 0 50.957 14.346" preserveAspectRatio="none"
+                                        style="width:100%;height:100%;opacity:1.0;overflow:hidden;position:absolute;top:0%;left:0%;">
+                                        <g id="CPwKV570MDHmZP7R" style="transform:scale(1, 1);">
+                                            <path id="Zchx2raHMObTDpiD"
+                                                d="M0,0 L50.95697843,0 L50.95697843,14.3459765 L0,14.3459765 Z"
+                                                style="fill:#80f0ff;opacity:1.0;"></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div id="Wlf2PGTQYJtSOV5e" style="z-index:3;">
+                                <div id="whi9aq2tPjd3MqQq"
+                                    style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
+                                    <div id="CUfRlKMJQ2OQNDz0"
+                                        style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:center;width:100%;height:100%;">
+                                        <p id="cfOoGMj16wnw9bex"
+                                            style="color:#0c1718;direction:ltr;font-family:YAEw1pyVaO0-0;margin-left:0em;line-height:1.39283973em;text-align:center;text-transform:uppercase;letter-spacing:0.038em;">
+                                            <a id="Ze4uAkenLJmueB9F" href="index.html#contact"
+                                                style="text-decoration-line:underline;color:#0c1718;font-style:normal;font-weight:700;pointer-events:all;"
+                                                target="_self">get in touch</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="cTtfA2XAPQUykHeu">
+                    <div id="PxOYmRVnQp6vTvn5" style="display:grid;position:relative;">
+                        <div id="HqavQRGomWZVHZzP" style="display:grid;position:relative;grid-area:2 / 2 / 3 / 3;">
+                            <div id="HpGD91AypDHspOru" style="z-index:6;">
+                                <div id="ILRzpbsRTTBJnEif"
+                                    style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);"><svg
+                                        id="xHoG9ylyxKt85r9A" viewBox="0 0 50.957 14.346" preserveAspectRatio="none"
+                                        style="width:100%;height:100%;opacity:1.0;overflow:hidden;position:absolute;top:0%;left:0%;background:url(%27data_image/png%3bbase64%2c%27.html);">
+                                        <g id="l5nORckxJXx0TARg" style="transform:scale(1, 1);">
+                                            <g id="GovjiRVfgovouGMS" style="clip-path:url(#Jdp3cd5TDyjuFoZc);">
+                                                <clippath id="Jdp3cd5TDyjuFoZc">
+                                                    <path
+                                                        d="M0,0 L50.95697843,0 L50.95697843,14.3459765 L0,14.3459765 Z">
+                                                    </path>
+                                                </clippath>
+                                                <path id="qiWzFL8wxOxMormi"
+                                                    d="M0,0 L50.95697843,0 L50.95697843,14.3459765 L0,14.3459765 Z"
+                                                    style="fill:none;stroke:transparent;"></path>
+                                                <path id="hNDeWUqoGQUQWohU"
+                                                    d="M0,0 L50.95697843,0 L50.95697843,14.3459765 L0,14.3459765 Z"
+                                                    style="fill:none;stroke-linecap:butt;vector-effect:non-scaling-stroke;stroke:#80f0ff;">
+                                                </path>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div id="Oz0TiJECt3i1dHiL" style="z-index:7;">
+                                <div id="DZ75x9BPaQYUybag"
+                                    style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
+                                    <div id="z3pJlxYlrDVb2LFc"
+                                        style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:center;width:100%;height:100%;">
+                                        <p id="osKCZvFyTQXLef3M"
+                                            style="color:#80f0ff;font-family:YAEw1pyVaO0-0;line-height:1.39285466em;text-align:center;text-transform:uppercase;letter-spacing:0em;">
+                                            <a id="oKUzRgE6cmCYb9d8" href="index.html#services"
+                                                style="text-decoration-line:underline;color:#80f0ff;font-weight:700;pointer-events:all;"
+                                                target="_self">View portfolio</a><br>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><a id="about" aria-hidden="true" style="visibility:hidden;"></a>
+        <section id="UwrpaKIkIGL5PZi4"
+            style="position:relative;overflow:hidden;display:grid;align-items:center;grid-template-columns:auto 100rem auto;z-index:0;margin-top:-1px;">
+            <div id="c6mrW5c8D2s08F86"
+                style="grid-area:1 / 1 / 2 / 4;display:grid;position:absolute;min-height:100%;min-width:100%;">
+                <div id="IUHO5xamlg9D3NlQ" style="z-index:0;">
+                    <div id="uqgZaBjvCNaF75kt"
+                        style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
+                        <div id="iz7fpqGArxHVmswZ" style="width:100%;height:100%;opacity:1.0;">
+                            <div id="ZaLnQl3OqDlPSSbh"
+                                style="background-color:#0c121c;opacity:1.0;transform:scale(1, 1);width:100%;height:100%;overflow:hidden;position:relative;">
+                                <div id="OJKm4CGMxUEOyzWj"
+                                    style="width:calc(100% * max(1, var(--scale-fill, 1)));height:calc(100.04882813% / min(1, var(--scale-fill, 1)));position:absolute;top:50%;left:50%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
+                                    <img src="./assets/images/63d5b1bbee2bf3fa39a86d6b1376b5e3.jpg" loading="lazy"
+                                        sizes="(max-width: 375px) 371.85555556vw, (min-width: 375.05px) and (max-width: 480px) 290.51215278vw, (min-width: 480.05px) and (max-width: 768px) 207.00425732vw, (min-width: 768.05px) and (max-width: 1024px) 149.0652831vw, (min-width: 1024.05px) 100vw"
+                                        style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%;transform:translate(-50%, -50%) rotate(0deg);">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="DJDFfegXhwyVoJEx" style="display:grid;position:relative;grid-area:1 / 2 / 2 / 3;">
+                <div id="rQppcihtVCQ7iQk6" style="z-index:4;">
+                    <div id="ILh0xebzNCb5kOUs" style="box-sizing:border-box;width:100%;height:100%;">
+                        <div class="animation_container" style="width:100%;height:100%;">
+                            <div class="animated"
+                                style="width:100%;height:100%;animation:fade-LEFT-ccd082e7-0ff6-4539-b8aa-c23a1b55d619 833ms 100ms both paused;">
+                                <div id="im1dpVFnOpIdgYgK"
+                                    style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                                    <p id="t7KhEk5JN1mBljYa"
+                                        style="color:#ffffff;font-family:YAEw1mAb2y8-0;line-height:1.21667681em;-webkit-text-stroke:0.0375em rgb(255, 255, 255);-webkit-text-fill-color:transparent;">
+                                        <span id="XCg0WyQWOJMzf5Dv" style="color:#ffffff;font-weight:700;">WE ARE TM
+                                            MEDIA</span><br>
+                                    </p>
+                                    <p id="zjBSc7Bxf1w3Gxsy"
+                                        style="color:#ffffff;direction:ltr;font-family:YAEw1mAb2y8-0;margin-left:0em;line-height:1.21667681em;text-align:left;text-transform:none;letter-spacing:0em;-webkit-text-stroke:0.0375em rgb(255, 255, 255);-webkit-text-fill-color:transparent;white-space:pre;">
+                                        <br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="JABxWmL5iVyOMiyM" style="z-index:5;">
+                    <div id="s9DuXO9kJhnxb2Lm" style="box-sizing:border-box;width:100%;height:100%;">
+                        <div class="animation_container" style="width:100%;height:100%;">
+                            <div class="animated"
+                                style="width:100%;height:100%;animation:fade-LEFT-d74b3cf3-5c7f-47dd-9da1-e8e5625f39dc 833ms 100ms both paused;">
+                                <div id="bACUMmbsALGvkjbc"
+                                    style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                                    <p id="NEJEWkVy75GtibFW"
+                                        style="color:#ffffff;direction:ltr;font-family:YAEw1mAb2y8-0;margin-left:0em;line-height:1.2187519em;text-align:center;text-transform:none;letter-spacing:0em;">
+                                        <span id="pWVKsMNimJXZJqFo" style="color:#ffffff;font-weight:700;">Build and
+                                            develop music channel on Youtube platform</span><br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Py47eHUloMi4vjwV">
+                    <div id="ntTD0E526UqSmfit" style="display:grid;position:relative;">
+                        <div id="DExy08ZwJeAUNHZ7" style="z-index:3;">
+                            <div id="DjCX81zOpF8mMtTc" style="padding-top:95.27272727%;transform:rotate(0deg);">
+                                <div id="TB1U5q9CARwB7ZyB"
+                                    style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
+                                    <div id="ozOBdcz31ujMtBxu" style="width:100%;height:100%;opacity:1.0;">
+                                        <div id="PNktR6PkJXi5NBGh"
+                                            style="transform:scale(1, 1);width:100%;height:100%;overflow:hidden;position:relative;">
+                                            <div id="MJvWFCdP2QJISV9f"
+                                                style="width:calc(100% * max(1, var(--scale-fill, 1)));height:calc(157.54121135% / min(1, var(--scale-fill, 1)));position:absolute;top:50%;left:50%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
+                                                <img src="./assets/images/dbf838f01b74f1118e18af07012d4fe0.jpg"
+                                                    alt="Person Holding Black Video Camera" loading="lazy"
+                                                    sizes="(max-width: 375px) 81.9176702vw, (min-width: 375.05px) and (max-width: 480px) 83.58945939vw, (min-width: 480.05px) and (max-width: 768px) 56.73376872vw, (min-width: 768.05px) and (max-width: 1024px) 42.55032654vw, (min-width: 1024.05px) 31.89717011vw"
+                                                    style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 49.49392648%;transform:translate(-50%, -49.49392648%) rotate(0deg);">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="dSvL8zJbZYa9ra9m" style="z-index:1;">
+                    <div id="Zp6KSA8BfVpEnPBD" style="padding-top:95.27272727%;transform:rotate(0deg);">
+                        <div id="nmFkssDAlKlQhom2" style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
+                            <div id="tXrqVexmLsVKKH46" style="width:100%;height:100%;opacity:1.0;">
+                                <div id="NUcnVlBSva4E40Bn"
+                                    style="transform:scale(1, 1);width:100%;height:100%;overflow:hidden;position:relative;">
+                                    <div id="d86Ouzq7oCxbFXtC"
+                                        style="width:calc(100% * max(1, var(--scale-fill, 1)));height:calc(100% / min(1, var(--scale-fill, 1)));position:absolute;top:50%;left:50%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
+                                        <img src="./assets/images/d4b658d221131570c9cea41650ea2c80.svg"
+                                            alt="White Dynamic Element	" loading="lazy"
+                                            style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%;transform:translate(-50%, -50%) rotate(0deg);">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><a id="services" aria-hidden="true" style="visibility:hidden;"></a>
+        <section id="IlRQdJbJCUpZMYZi"
+            style="position:relative;overflow:hidden;display:grid;align-items:center;grid-template-columns:auto 100rem auto;z-index:0;margin-top:-1px;">
+            <div id="qwXp7Fm08T6gxsCz"
+                style="grid-area:1 / 1 / 2 / 4;display:grid;position:absolute;min-height:100%;min-width:100%;">
+                <div id="GfNh4yRfkup0Sz1u" style="z-index:0;">
+                    <div id="uXx7KR2XJjKNLjMl"
+                        style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
+                        <div id="k7bs1Laq3QhVlzNV" style="width:100%;height:100%;opacity:1.0;">
+                            <div id="ugSbPo1pZUrhIeXs"
+                                style="background-color:#0c121c;opacity:1.0;transform:scale(1, 1);width:100%;height:100%;overflow:hidden;position:relative;">
+                                <div id="EN8bxYxwyQ0eWyzz"
+                                    style="width:calc(100% * max(1, var(--scale-fill, 1)));height:calc(118.50227865% / min(1, var(--scale-fill, 1)));position:absolute;top:50%;left:50%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
+                                    <img src="./assets/images/d76392675c86d14d72b25389e8d2500c.jpg" loading="lazy"
+                                        sizes="(max-width: 375px) 719.62648767vw, (min-width: 375.05px) and (max-width: 480px) 499.05996234vw, (min-width: 480.05px) and (max-width: 768px) 316.49520969vw, (min-width: 768.05px) and (max-width: 1024px) 212.86617646vw, (min-width: 1024.05px) 100vw"
+                                        style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%;transform:translate(-50%, -50%) rotate(0deg);">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="wnKFkUfC4cMMkAKh" style="display:grid;position:relative;grid-area:1 / 2 / 2 / 3;">
+                <div id="bSpzufocDwDKkE4J" style="z-index:13;">
+                    <div id="xWeDPf65PYLegb2n" style="box-sizing:border-box;width:100%;height:100%;">
+                        <div class="animation_container" style="width:100%;height:100%;">
+                            <div class="animated"
+                                style="width:100%;height:100%;animation:fade-LEFT-cd4f4d50-6820-4e7e-bb70-137f5dbbd2c8 1111ms 100ms both paused;">
+                                <div id="Wjau8uaGpiAjl47m"
+                                    style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                                    <p id="IQYlBAUlMQnGbLGc"
+                                        style="color:#ffffff;direction:ltr;font-family:YAEw1mAb2y8-0;margin-left:0em;line-height:0.98750123em;text-transform:uppercase;letter-spacing:0.034em;">
+                                        <span id="fbnrpNwkK1w5PnAi"
+                                            style="text-decoration-line:none;color:#ffffff;font-style:normal;font-weight:700;">What
+                                            We Do</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="ntlniFzLnxrx9XWe" style="z-index:14;">
+                    <div id="PfFaUWAeTIHFkwEF"
+                        style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
+                        <div id="gEjx6vskV5E1FSq7"
+                            style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                            <p id="KBY4qFSlBM2c72LB"
+                                style="color:#ffffff;direction:ltr;font-family:YAEw1pyVaO0-0;margin-left:0em;line-height:1.45833941em;text-transform:none;letter-spacing:0em;">
+                                <span id="La9mcWDWqPU9P59i" style="color:#ffffff;">We are licensed by music labels and
+                                    owners to produce and publish music videos on YouTube channels</span><br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="H7mTd4QUHWzyZDp1" style="z-index:10;">
+                    <div id="qif9fK94bEKHsHxk" style="padding-top:100%;transform:rotate(0deg);">
+                        <div id="Kps1q9F4DKHdwWam" style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
+                            <svg id="ngXf8OGSmNewbQ8M" viewBox="0 0 64.0 64.0"
+                                style="width:100%;height:100%;opacity:1.0;overflow:hidden;position:absolute;top:0%;left:0%;background:url(%27data_image/png%3bbase64%2c%27.html);">
+                                <g id="w1470HEhyjOFJgVj" style="transform:scale(1, 1);">
+                                    <foreignobject id="Jf9ODWLFuX3PdcNU" style="width:64px;height:64px;">
+                                        <div id="H1pEGeNwWeimAr1g">
+                                            <div id="Syok3niQJOrF6ZNI"
+                                                style="transform:scale(1, 1);transform-origin:32px 32px;">
+                                                <img src="./assets/images/77b08e6ddcf5962d4f5226ceb5086088.jpg"
+                                                    alt="Businessperson with Social Media Concepts" loading="lazy"
+                                                    style="transform:translate(-25.91855204px, 0px) rotate(0deg);transform-origin:57.91855204px 32px;width:115.83710407px;height:64px;display:block;opacity:1.0;object-fit:fill;">
+                                            </div>
+                                        </div>
+                                    </foreignobject>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div id="he3D7Fzod83LuaIw" style="z-index:11;">
+                    <div id="kPcWpDrhpd6R03XT" style="padding-top:100%;transform:rotate(0deg);">
+                        <div id="ohO1Qwx6LJleA5lz" style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
+                            <svg id="Q4D25YDm2OqgoQts" viewBox="0 0 64.0 64.0"
+                                style="width:100%;height:100%;opacity:1.0;overflow:hidden;position:absolute;top:0%;left:0%;background:url(%27data_image/png%3bbase64%2c%27.html);">
+                                <g id="EKZNPIzwuYb0d2jg" style="transform:scale(1, 1);">
+                                    <foreignobject id="Ro4plWbfyZKm8uvO" style="width:64px;height:64px;">
+                                        <div id="Fj8Sz8j8yJp2imVM">
+                                            <div id="CNUUpuOyQozhs6x0"
+                                                style="transform:scale(1, 1);transform-origin:32px 32px;">
+                                                <img src="./assets/images/2f60a4d679a743e905318b9f7861c250.jpg"
+                                                    alt="Social Media" loading="lazy"
+                                                    style="transform:translate(-16px, 0px) rotate(0deg);transform-origin:48px 32px;width:96px;height:64px;display:block;opacity:1.0;object-fit:fill;">
+                                            </div>
+                                        </div>
+                                    </foreignobject>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div id="CtkbtbmTnmXMGEMW" style="z-index:12;">
+                    <div id="TeSM9kE1wxvv6Y3F" style="padding-top:100%;transform:rotate(0deg);">
+                        <div id="kFgWty7seQXT7FuX" style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
+                            <svg id="SCzVthdb9wjSNqNW" viewBox="0 0 64.0 64.0"
+                                style="width:100%;height:100%;opacity:1.0;overflow:hidden;position:absolute;top:0%;left:0%;background:url(%27data_image/png%3bbase64%2c%27.html);">
+                                <g id="Lg6jNDvdrh4mBYOY" style="transform:scale(1, 1);">
+                                    <foreignobject id="qs8nXYOJUCl9I5Sq" style="width:64px;height:64px;">
+                                        <div id="t3nawgpPfQPo4dGJ">
+                                            <div id="F6LOLOW6hQe38DkI"
+                                                style="transform:scale(1, 1);transform-origin:32px 32px;"><img
+                                                    src="./assets/images/290c734b5b1edc7726b66e7f427c2161.jpg"
+                                                    alt="Social Media Communication" loading="lazy"
+                                                    style="transform:translate(-16px, 0px) rotate(0deg);transform-origin:48px 32px;width:96px;height:64px;display:block;opacity:1.0;object-fit:fill;">
+                                            </div>
+                                        </div>
+                                    </foreignobject>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div id="HjpQq8EDlhD3HBQz">
+                    <div id="koXJm3tOhHgSlDCm" style="display:grid;position:relative;">
+                        <div id="Iqdz94CikoFv8yGj" style="z-index:3;">
+                            <div id="Oje8CLMoYoEhXG2N" style="padding-top:100%;">
+                                <div id="TG2ksCEvrpjGYVAO"
+                                    style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
+                                    <div class="animation_container" style="width:100%;height:100%;">
+                                        <div class="animated"
+                                            style="width:100%;height:100%;animation:pan-RIGHT-bc50b178-5494-4e72-a3bd-d3b09ff49e84 877ms 100ms both paused, linear_fade 400ms linear both paused;">
+                                            <div id="PclBG6IcTQ3vZ1LY" style="width:100%;height:100%;opacity:1.0;">
+                                                <div id="XzYOZDl6bPxIZ93m"
+                                                    style="transform:scale(1, 1);width:100%;height:100%;overflow:hidden;position:relative;">
+                                                    <div id="t1DZUjrcWbeqDvDN"
+                                                        style="width:calc(100% * max(1, var(--scale-fill, 1)));height:calc(100% / min(1, var(--scale-fill, 1)));position:absolute;top:50%;left:50%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
+                                                        <img src="./assets/images/5526a2757088fb6ddc80682d4010e37d.svg"
+                                                            alt="Abstract Minimalist Lined Sparkle Shape" loading="lazy"
+                                                            style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%;transform:translate(-50%, -50%) rotate(0deg);">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="uo1JXQdCB7EDSPXG" style="z-index:2;">
+                            <div id="oR1y52bj9xxxgNAG" style="box-sizing:border-box;width:100%;height:100%;">
+                                <div class="animation_container" style="width:100%;height:100%;">
+                                    <div class="animated"
+                                        style="width:100%;height:100%;animation:pan-RIGHT-54fd3434-6949-4421-b7c1-58afa4ece73a 877ms 100ms both paused, linear_fade 400ms linear both paused;">
+                                        <div id="hwcwwMkfl0F9onDo"
+                                            style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                                            <p id="MCVcO8jJF2IcxkxA"
+                                                style="color:#ffffff;direction:ltr;font-family:YAEw1mAb2y8-0;margin-left:0em;line-height:0.98863075em;text-align:left;text-transform:uppercase;letter-spacing:0.034em;-webkit-text-stroke:0.03375em rgb(255, 255, 255);-webkit-text-fill-color:transparent;">
+                                                <span id="izqovmvapVPTZsDl"
+                                                    style="color:#ffffff;font-weight:700;">Youtube Management</span><br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="hORhtg73mQV4fiJB">
+                    <div id="ZEjDQqyiB2cz8F3f" style="display:grid;position:relative;">
+                        <div id="yMmpowgmUXiuzV2U" style="z-index:6;">
+                            <div id="sXlJVbsw5sfKN1HG" style="padding-top:100%;transform:rotate(0deg);">
+                                <div id="RcGuJdUSpM4QpAjO"
+                                    style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
+                                    <div id="I2oUAbJX5lbDQp7F" style="width:100%;height:100%;opacity:1.0;">
+                                        <div id="A4bUJ0PjsdOdKEzZ"
+                                            style="transform:scale(1, 1);width:100%;height:100%;overflow:hidden;position:relative;">
+                                            <div id="iIu4o7D4v57BaspS"
+                                                style="width:calc(100% * max(1, var(--scale-fill, 1)));height:calc(100% / min(1, var(--scale-fill, 1)));position:absolute;top:50%;left:50%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
+                                                <img src="./assets/images/5526a2757088fb6ddc80682d4010e37d.svg"
+                                                    alt="Abstract Minimalist Lined Sparkle Shape" loading="lazy"
+                                                    style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%;transform:translate(-50%, -50%) rotate(0deg);">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="etmSrH5mle87nAXX" style="z-index:5;">
+                            <div id="eHTIMFzGFsaaCPZK"
+                                style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
+                                <div id="OPIcv4miInhVL19b"
+                                    style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                                    <p id="bxwlrouSkn7Jfkoh"
+                                        style="color:#ffffff;direction:ltr;font-family:YAEw1mAb2y8-0;margin-left:0em;line-height:0.99231872em;text-align:left;text-transform:uppercase;letter-spacing:0.034em;-webkit-text-stroke:0.03375em rgb(255, 255, 255);-webkit-text-fill-color:transparent;">
+                                        <span id="hlxM9rayKIgTk0GM" style="color:#ffffff;font-weight:700;">Management
+                                            And Optimization Of Music, Video, Image Catalogs</span><br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="uRmzqYyZQt1UaNJ1">
+                    <div id="pFXZK8YNeg8rrk6I" style="display:grid;position:relative;">
+                        <div id="dFYfBK2Z3aGYFElQ" style="z-index:9;">
+                            <div id="Jz2hAI9UtNtlcYnQ" style="padding-top:100%;">
+                                <div id="OpaFceRmdvR9n9fH"
+                                    style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
+                                    <div class="animation_container" style="width:100%;height:100%;">
+                                        <div class="animated"
+                                            style="width:100%;height:100%;animation:pan-RIGHT-dc563d28-d919-47f0-9924-6270d3b9b65d 877ms 100ms both paused, linear_fade 400ms linear both paused;">
+                                            <div id="hArOMmUSUtwrLuHN" style="width:100%;height:100%;opacity:1.0;">
+                                                <div id="jvKnRqWdqeLRyNyo"
+                                                    style="transform:scale(1, 1);width:100%;height:100%;overflow:hidden;position:relative;">
+                                                    <div id="lykXkCGSVvUbgp1f"
+                                                        style="width:calc(100% * max(1, var(--scale-fill, 1)));height:calc(100% / min(1, var(--scale-fill, 1)));position:absolute;top:50%;left:50%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
+                                                        <img src="./assets/images/5526a2757088fb6ddc80682d4010e37d.svg"
+                                                            alt="Abstract Minimalist Lined Sparkle Shape" loading="lazy"
+                                                            style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%;transform:translate(-50%, -50%) rotate(0deg);">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="gERuK3DZiQlg8aK3" style="z-index:8;">
+                            <div id="u8i2hNHIOWHbBIPv" style="box-sizing:border-box;width:100%;height:100%;">
+                                <div class="animation_container" style="width:100%;height:100%;">
+                                    <div class="animated"
+                                        style="width:100%;height:100%;animation:pan-RIGHT-ceb7914f-bcf9-485f-8399-dab847eb0148 877ms 100ms both paused, linear_fade 400ms linear both paused;">
+                                        <div id="ZriyWG4eqghyH5us"
+                                            style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                                            <p id="jnVX7CG9KcqZ5kYu"
+                                                style="color:#ffffff;direction:ltr;font-family:YAEw1mAb2y8-0;margin-left:0em;line-height:0.99999643em;text-align:left;text-transform:uppercase;letter-spacing:0.034em;-webkit-text-stroke:0.03375em rgb(255, 255, 255);-webkit-text-fill-color:transparent;">
+                                                <span id="mcuX4fSoCuJk0sHR"
+                                                    style="color:#ffffff;font-weight:700;">STRATEGIC AND EDITORIAL
+                                                    CONSULTANCY ON DIGITAL</span><br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><a id="page-4" aria-hidden="true" style="visibility:hidden;"></a>
+        <section id="na2syd376QCEdJvm"
+            style="position:relative;overflow:hidden;display:grid;align-items:center;grid-template-columns:auto 100rem auto;z-index:0;margin-top:-1px;">
+            <div id="yCfzNTzSe8xsdynO"
+                style="grid-area:1 / 1 / 2 / 4;display:grid;position:absolute;min-height:100%;min-width:100%;">
+                <div id="ozEQpIM0W1jYMK0O" style="z-index:0;">
+                    <div id="vDKdFAo9LDYrl8fT"
+                        style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
+                        <div id="PIlkNkpBAF4Rst9p" style="width:100%;height:100%;opacity:1.0;">
+                            <div id="ZCLBq0oW9CCZKPa8"
+                                style="background-color:#0c121c;opacity:1.0;transform:scale(1, 1);width:100%;height:100%;overflow:hidden;position:relative;">
+                                <div id="di8RxLrL0EiIXUfu"
+                                    style="width:calc(100% * max(1, var(--scale-fill, 1)));height:calc(100.04882813% / min(1, var(--scale-fill, 1)));position:absolute;top:50%;left:50%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
+                                    <img src="./assets/images/c6e089c5d4d25a4fc525877eadd9cb5b.jpg" loading="lazy"
+                                        sizes="(max-width: 375px) 783.44672544vw, (min-width: 375.05px) and (max-width: 480px) 640.12049329vw, (min-width: 480.05px) and (max-width: 768px) 415.40626544vw, (min-width: 768.05px) and (max-width: 1024px) 309.11549084vw, (min-width: 1024.05px) 100vw"
+                                        style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%;transform:translate(-50%, -50%) rotate(0deg);">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="T1KFfTf8QDec5gxe" style="display:grid;position:relative;grid-area:1 / 2 / 2 / 3;">
+                <div id="rASE571RCMwwDule" style="z-index:9;">
+                    <div id="WIu38SG2FfEPdBjz" style="box-sizing:border-box;width:100%;height:100%;">
+                        <div class="animation_container" style="width:100%;height:100%;">
+                            <div class="animated"
+                                style="width:100%;height:100%;animation:fade-LEFT-fe553042-02e7-43f2-bade-f01f71cc297b 943ms 100ms both paused;">
+                                <div id="B2fx5OpkH62Y1EKb"
+                                    style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                                    <p id="msbQpbPhT3IkoIHq"
+                                        style="color:#ffffff;direction:ltr;font-family:YAEw1mAb2y8-0;margin-left:0em;line-height:0.98750123em;text-transform:uppercase;letter-spacing:0.034em;">
+                                        <span id="h5ELtWBlmLANzypO"
+                                            style="color:#ffffff;font-weight:700;">Achievement</span><br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="gItLrOuXPXkbYPED">
+                    <div id="Mj7A37TJWaoIdsyM" style="display:grid;position:relative;">
+                        <div id="zleYu7lUbq9dJf2r" style="z-index:2;">
+                            <div id="C8XDLTc6QUmOiBhj"
+                                style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
+                                <div id="jUukqAyeNfjJyhaC" style="width:100%;height:100%;opacity:1.0;">
+                                    <div id="M3kENUpfdmh54l1M"
+                                        style="transform:scale(1, 1);width:100%;height:100%;overflow:hidden;position:relative;">
+                                        <div id="Ez2C0LMnggpbFfDi"
+                                            style="width:calc(100% * max(1, var(--scale-fill, 1)));height:calc(100% / min(1, var(--scale-fill, 1)));position:absolute;top:50%;left:50%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
+                                            <img src="./assets/images/c482aab0f96b9ee50f94d5814f677c8c.png"
+                                                loading="lazy"
+                                                style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%;transform:translate(-50%, -50%) rotate(0deg);">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="ZlTBOOYbcFKocsHV" style="z-index:6;">
+                            <div id="f8Mu6vKv7wWvGFjb" style="padding-top:100%;transform:rotate(0deg);">
+                                <div id="ClF4JD7654OzucdU"
+                                    style="position:absolute;top:0px;left:0px;width:100%;height:100%;"><svg
+                                        id="tuySIOfJiXZ7fM9w" viewBox="0 0 64.0 64.0"
+                                        style="width:100%;height:100%;opacity:1.0;overflow:hidden;position:absolute;top:0%;left:0%;background:url(%27data_image/png%3bbase64%2c%27.html);">
+                                        <g id="gvYNFEOHnO91ivAS" style="transform:scale(1, 1);">
+                                            <foreignobject id="n5Dkv44xm0EGCr5V" style="width:64px;height:64px;">
+                                                <div id="VCnFn4sJJbuLVPT7">
+                                                    <div id="Z5TPaeUUMhShj9hW"
+                                                        style="transform:scale(1, 1);transform-origin:32px 32px;"><img
+                                                            src="./assets/images/3e032adf72d8d470e3408968f0ded5dd.png"
+                                                            loading="lazy"
+                                                            style="transform:translate(-9.12676056px, 0px) rotate(0deg);transform-origin:41.12676056px 32px;width:82.25352113px;height:64px;display:block;opacity:1.0;object-fit:fill;">
+                                                    </div>
+                                                </div>
+                                            </foreignobject>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="j8VmP7vmxg705WK1" style="z-index:7;">
+                    <div id="WKJjyo8Wsm3APn59" style="box-sizing:border-box;width:100%;height:100%;">
+                        <div class="animation_container" style="width:100%;height:100%;">
+                            <div class="animated"
+                                style="width:100%;height:100%;animation:pan-LEFT-42acae61-238f-41e5-a191-4b9fd8279805 1041ms 100ms both paused, linear_fade 400ms linear both paused;">
+                                <div id="g70zCMV57cRfAZ3K"
+                                    style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                                    <p id="rDgqEVLPjn7jy3xP"
+                                        style="color:#ffffff;font-family:YAEw1mAb2y8-0;line-height:0.97917279em;text-transform:uppercase;letter-spacing:0.034em;-webkit-text-stroke:0.03375em rgb(255, 255, 255);-webkit-text-fill-color:transparent;">
+                                        <span id="aDiC8MJptLG5TqY1"
+                                            style="color:#ffffff;font-weight:700;">YEARS</span><br>
+                                    </p>
+                                    <p id="DF3PB9W5qRQbY9hi"
+                                        style="color:#ffffff;direction:ltr;font-family:YAEw1mAb2y8-0;margin-left:0em;line-height:0.97917279em;text-align:left;text-transform:uppercase;letter-spacing:0.034em;-webkit-text-stroke:0.03375em rgb(255, 255, 255);-webkit-text-fill-color:transparent;white-space:pre;">
+                                        <br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="BvZ2uDaxzimhrf0j">
+                    <div id="ecUwB5G09b30fsru" style="display:grid;position:relative;">
+                        <div id="Kv0haF3cw8q6YduZ" style="z-index:1;">
+                            <div id="XLUIRtlSWqghVtUy" style="padding-top:91.78571429%;transform:rotate(0deg);">
+                                <div id="SENtZDUXIM1Ta8N5"
+                                    style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
+                                    <div id="ylApA0RPjaVeqk9S" style="width:100%;height:100%;opacity:1.0;">
+                                        <div id="bYyOGakIFohHyCQl"
+                                            style="transform:scale(1, 1);width:100%;height:100%;overflow:hidden;position:relative;">
+                                            <div id="jVf3S6VeMlwQfM2S"
+                                                style="width:calc(100% * max(1, var(--scale-fill, 1)));height:calc(100% / min(1, var(--scale-fill, 1)));position:absolute;top:50%;left:50%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
+                                                <img src="./assets/images/c482aab0f96b9ee50f94d5814f677c8c.png"
+                                                    loading="lazy"
+                                                    style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%;transform:translate(-50%, -50%) rotate(0deg);">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="w9vIdYfUohrARrt7" style="z-index:5;">
+                            <div id="ATV3VNrcI2B2steC" style="padding-top:100%;transform:rotate(0deg);">
+                                <div id="ZCGRyfriRxC9T3pz"
+                                    style="position:absolute;top:0px;left:0px;width:100%;height:100%;"><svg
+                                        id="Aeo810pEjCao01Fe" viewBox="0 0 64.0 64.0"
+                                        style="width:100%;height:100%;opacity:1.0;overflow:hidden;position:absolute;top:0%;left:0%;background:url(%27data_image/png%3bbase64%2c%27.html);">
+                                        <g id="f3w3YFsNnWizptjg" style="transform:scale(1, 1);">
+                                            <foreignobject id="cuhT4M6vMG3BUk7u" style="width:64px;height:64px;">
+                                                <div id="VALmJRkLI0fgOFl3">
+                                                    <div id="AeJ1U49TnNbVwXHb"
+                                                        style="transform:scale(1, 1);transform-origin:32px 32px;"><img
+                                                            src="./assets/images/4d49012e56cc704aaf82004fd459cde5.png"
+                                                            loading="lazy"
+                                                            style="transform:translate(-7.69337979px, 0px) rotate(0deg);transform-origin:39.69337979px 32px;width:79.38675958px;height:64px;display:block;opacity:1.0;object-fit:fill;">
+                                                    </div>
+                                                </div>
+                                            </foreignobject>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Fi7ixtfAxwV2D6r0" style="z-index:8;">
+                    <div id="VC6K0dhvJLvR9yp5" style="box-sizing:border-box;width:100%;height:100%;">
+                        <div class="animation_container" style="width:100%;height:100%;">
+                            <div class="animated"
+                                style="width:100%;height:100%;animation:pan-RIGHT-53c9d2f5-83a3-4205-8511-661c2ce14561 1041ms 100ms both paused, linear_fade 400ms linear both paused;">
+                                <div id="KV1QQtapdUbFBqKn"
+                                    style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                                    <p id="TTjt9N3wRc9qZZ5e"
+                                        style="color:#ffffff;font-family:YAEw1mAb2y8-0;line-height:0.97917279em;text-align:center;text-transform:uppercase;letter-spacing:0.034em;-webkit-text-stroke:0.03375em rgb(255, 255, 255);-webkit-text-fill-color:transparent;">
+                                        <span id="dlAN91DSdQmEtgDR" style="color:#ffffff;font-weight:700;">YOUTUBE
+                                            CHANNELS </span><br>
+                                    </p>
+                                    <p id="AnX6O8sdOBMJgW9b"
+                                        style="color:#ffffff;direction:ltr;font-family:YAEw1mAb2y8-0;line-height:0.97917279em;text-align:center;text-transform:uppercase;letter-spacing:0.034em;-webkit-text-stroke:0.03375em rgb(255, 255, 255);-webkit-text-fill-color:transparent;white-space:pre;">
+                                        <br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="SKeoWfRVsr4WuPkB">
+                    <div id="hEGoM4V2d4MPnMAw" style="display:grid;position:relative;">
+                        <div id="IgIHnm56zrnbgVOq" style="z-index:3;">
+                            <div id="cNkn3sfu8pUpW62V"
+                                style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
+                                <div id="pIYyz9tU9TLTn8jD" style="width:100%;height:100%;opacity:1.0;">
+                                    <div id="CUZlbmKXlhRhuLwH"
+                                        style="transform:scale(1, 1);width:100%;height:100%;overflow:hidden;position:relative;">
+                                        <div id="IT5GPTCQ69UmbjA2"
+                                            style="width:calc(100% * max(1, var(--scale-fill, 1)));height:calc(100% / min(1, var(--scale-fill, 1)));position:absolute;top:50%;left:50%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
+                                            <img src="./assets/images/c482aab0f96b9ee50f94d5814f677c8c.png"
+                                                loading="lazy"
+                                                style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%;transform:translate(-50%, -50%) rotate(0deg);">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="PtIi9XeLatZKJLpY" style="z-index:4;">
+                            <div id="IZ58acg5Sq3lvzxR" style="padding-top:100%;transform:rotate(0deg);">
+                                <div id="lZLuwMBev8YNwYSG"
+                                    style="position:absolute;top:0px;left:0px;width:100%;height:100%;"><svg
+                                        id="oJIqAjb7oogneNR8" viewBox="0 0 64.0 64.0"
+                                        style="width:100%;height:100%;opacity:1.0;overflow:hidden;position:absolute;top:0%;left:0%;background:url(%27data_image/png%3bbase64%2c%27.html);">
+                                        <g id="mlhMwMJFbfafp1mZ" style="transform:scale(1, 1);">
+                                            <foreignobject id="DnejAw1ibrSySCAk" style="width:64px;height:64px;">
+                                                <div id="e1EloYPdMoIfKwet">
+                                                    <div id="BXoXKl3ybWAtwpVQ"
+                                                        style="transform:scale(1, 1);transform-origin:32px 32px;"><img
+                                                            src="./assets/images/a1429e60153882817a471c6db72f54d9.png"
+                                                            loading="lazy"
+                                                            style="transform:translate(-7.61904762px, 0px) rotate(0deg);transform-origin:39.61904762px 32px;width:79.23809524px;height:64px;display:block;opacity:1.0;object-fit:fill;">
+                                                    </div>
+                                                </div>
+                                            </foreignobject>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="yOkbK88f6wvhMPxd" style="z-index:10;">
+                    <div id="vCXZ0zBwe0jTnN7g" style="box-sizing:border-box;width:100%;height:100%;">
+                        <div class="animation_container" style="width:100%;height:100%;">
+                            <div class="animated"
+                                style="width:100%;height:100%;animation:pan-RIGHT-53c9d2f5-83a3-4205-8511-661c2ce14561 1041ms 100ms both paused, linear_fade 400ms linear both paused;">
+                                <div id="KV1QQtapdUbFBqKn"
+                                    style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                                    <p id="TTjt9N3wRc9qZZ5e"
+                                        style="color:#ffffff;font-family:YAEw1mAb2y8-0;line-height:0.97917279em;text-align:center;text-transform:uppercase;letter-spacing:0.034em;-webkit-text-stroke:0.03375em rgb(255, 255, 255);-webkit-text-fill-color:transparent;">
+                                        <span id="dlAN91DSdQmEtgDR" style="color:#ffffff;font-weight:700;">
+                                            USD </span><br>
+                                    </p>
+                                    <p id="AnX6O8sdOBMJgW9b"
+                                        style="color:#ffffff;direction:ltr;font-family:YAEw1mAb2y8-0;line-height:0.97917279em;text-align:center;text-transform:uppercase;letter-spacing:0.034em;-webkit-text-stroke:0.03375em rgb(255, 255, 255);-webkit-text-fill-color:transparent;white-space:pre;">
+                                        <br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><a id="testimonials" aria-hidden="true" style="visibility:hidden;"></a>
+        <section id="sWLd1vk8ir7NtGW8"
+            style="position:relative;overflow:hidden;display:grid;align-items:center;grid-template-columns:auto 100rem auto;z-index:0;margin-top:-1px;">
+            <div id="SLDOhQAaJglTeT8K"
+                style="grid-area:1 / 1 / 2 / 4;display:grid;position:absolute;min-height:100%;min-width:100%;">
+                <div id="Tb2Xd8lGr9iOmxgB" style="z-index:0;">
+                    <div id="ZDE2l7TD6PxeZdIK"
+                        style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
+                        <div id="lIOodPPYdJbokzaE" style="width:100%;height:100%;opacity:1.0;">
+                            <div id="IfSP1Fyoz1eZbnW9"
+                                style="background-color:#0c121c;opacity:1.0;transform:scale(1, 1);width:100%;height:100%;overflow:hidden;position:relative;">
+                                <div id="aheTXt5vRQO9Anqi"
+                                    style="width:calc(100% * max(1, var(--scale-fill, 1)));height:calc(100.04882813% / min(1, var(--scale-fill, 1)));position:absolute;top:50%;left:50%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
+                                    <img src="./assets/images/bf9c6b304046aaf58730fab618509a6e.jpg" loading="lazy"
+                                        sizes="(max-width: 375px) 856.25218985vw, (min-width: 375.05px) and (max-width: 480px) 607.40615192vw, (min-width: 480.05px) and (max-width: 768px) 397.10607085vw, (min-width: 768.05px) and (max-width: 1024px) 205.30989412vw, (min-width: 1024.05px) 100vw"
+                                        style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%;transform:translate(-50%, -50%) rotate(0deg);">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="NnD9SqTNjVcYWWgj" style="display:grid;position:relative;grid-area:1 / 2 / 2 / 3;">
+                <div id="xnX9dyGHQeXshR0S" style="z-index:21;">
+                    <div id="gxeLh69ZJZ4LpXkx" style="box-sizing:border-box;width:100%;height:100%;">
+                        <div class="animation_container" style="width:100%;height:100%;">
+                            <div class="animated"
+                                style="width:100%;height:100%;animation:fade-LEFT-22f3d475-ca5a-49a1-ba30-fc34d2ea9305 1428ms 100ms both paused;">
+                                <div id="Feb9Ikw7tcxemIMr"
+                                    style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                                    <p id="NZTR4er3teHVJdM3"
+                                        style="color:#ffffff;direction:ltr;font-family:YAEw1mAb2y8-0;margin-left:0em;line-height:0.98750123em;text-transform:uppercase;letter-spacing:0.034em;">
+                                        <span id="fOxT54mjx29kruvo" style="color:#ffffff;font-weight:700;">WHY CHOOSE
+                                            US?</span><br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="qyhVCAItf1nvGr0V">
+                    <div id="PkbvUsiSrxBBMmzs" style="display:grid;position:relative;">
+                        <div id="QdWnkBZsBIU0g344" style="z-index:14;">
+                            <div id="rfTK7oUzY8WG4CKT" style="padding-top:100%;transform:rotate(0deg);">
+                                <div id="nzfD8VwOob5ek7tf"
+                                    style="position:absolute;top:0px;left:0px;width:100%;height:100%;"><svg
+                                        id="XApaFH1bi3BGiQCj" viewBox="0 0 64.0 64.0"
+                                        style="width:100%;height:100%;opacity:1.0;overflow:hidden;position:absolute;top:0%;left:0%;">
+                                        <g id="Nv422IQUyAVEgV83" style="transform:scale(1, 1);">
+                                            <foreignobject id="hKzgDNIknIqcHO9w" style="width:64px;height:64px;">
+                                                <div id="RPtFZj2bNEHVxg01">
+                                                    <div id="q3X6yXhZ22cdpAqO"
+                                                        style="transform:scale(1, 1);transform-origin:32px 32px;"><img
+                                                            src="./assets/images/7f4c575288de644ea61bb8441a245742.jpg"
+                                                            loading="lazy"
+                                                            style="transform:translate(-24.53071253px, 0px) rotate(0deg);transform-origin:56.53071253px 32px;width:113.06142506px;height:64px;display:block;opacity:1.0;object-fit:fill;">
+                                                    </div>
+                                                </div>
+                                            </foreignobject>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="T6QHHqKzK1BXFMsd" style="z-index:15;">
+                            <div id="w56UwuePO9DT3bNT"
+                                style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
+                                <div id="F1VRQeVYOQ9iQIyf"
+                                    style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                                    <p id="J6M1MFpK1hByi5nx"
+                                        style="color:#80f0ff;direction:ltr;font-family:YAEw1pyVaO0-0;line-height:1.49999732em;text-align:left;text-transform:none;letter-spacing:0em;">
+                                        <span id="umUuOPrDSvpl2XvS" style="color:#80f0ff;">Mr. HOAN</span><br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="WgdGd5u6u9jpVlvY" style="z-index:12;">
+                    <div id="C90QEionOzuXa7QQ" style="padding-top:100%;transform:rotate(0deg);">
+                        <div id="tRBfpFmSOuZRmTlD" style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
+                            <svg id="aG5Tuv4Lj3GgWSv8" viewBox="0 0 64.0 64.0"
+                                style="width:100%;height:100%;opacity:1.0;overflow:hidden;position:absolute;top:0%;left:0%;background:url(%27data_image/png%3bbase64%2c%27.html);">
+                                <g id="EWNvUUhlFa9CtTG3" style="transform:scale(1, 1);">
+                                    <foreignobject id="h1GQSjmQ0pEE2OJE" style="width:64px;height:64px;">
+                                        <div id="hPB907gAqDkAYkJT">
+                                            <div id="F0OCVuxnoSysqkmJ"
+                                                style="transform:scale(1, 1);transform-origin:32px 32px;"><img
+                                                    src="./assets/images/8552735ebd155b7251d84155b3cc533a.jpg"
+                                                    loading="lazy"
+                                                    style="transform:translate(0px, -0.19104478px) rotate(0deg);transform-origin:32px 32.19104478px;width:64px;height:64.38208955px;display:block;opacity:1.0;object-fit:fill;">
+                                            </div>
+                                        </div>
+                                    </foreignobject>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div id="rLkUmE8m91tTHmCR" style="z-index:23;">
+                    <div id="h2QTwwo3KSjJjCFK"
+                        style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
+                        <div id="mWesgtCQRDyjJP6e"
+                            style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                            <p id="vZE2XQTahfn9DsAM"
+                                style="color:#80f0ff;direction:ltr;font-family:YAEw1pyVaO0-0;line-height:1.49999732em;text-align:left;text-transform:none;letter-spacing:0em;">
+                                <span id="vojyyuUgDD4BFfLv" style="color:#80f0ff;">Mrs. GIANG</span><br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="yCgn35ljIP32Opsg" style="z-index:11;">
+                    <div id="uS4YB7CdsEmlaNyW" style="padding-top:100%;transform:rotate(0deg);">
+                        <div id="RU9UpgEacYWxckwT" style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
+                            <svg id="QZcl01oX5QYwJYck" viewBox="0 0 64.0 64.0"
+                                style="width:100%;height:100%;opacity:1.0;overflow:hidden;position:absolute;top:0%;left:0%;background:url(%27data_image/png%3bbase64%2c%27.html);">
+                                <g id="l0XsXtNmnZOxj8rY" style="transform:scale(1, 1);">
+                                    <foreignobject id="l076b7ikgdZdeehy" style="width:64px;height:64px;">
+                                        <div id="VUjjxz4TMNojsNpb">
+                                            <div id="OljXpTqURPag3fLZ"
+                                                style="transform:scale(1, 1);transform-origin:32px 32px;"><img
+                                                    src="./assets/images/5cdac48926b226d4b7caa2cdc933baf0.jpg"
+                                                    loading="lazy"
+                                                    style="transform:translate(0px, 0px) rotate(0deg);transform-origin:32px 32px;width:64px;height:64px;display:block;opacity:1.0;object-fit:fill;">
+                                            </div>
+                                        </div>
+                                    </foreignobject>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div id="Cf1y3qyKi95AaUJj" style="z-index:22;">
+                    <div id="xoyIyIqkb6poxxWx"
+                        style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
+                        <div id="M6yozFmy2a7EBRr9"
+                            style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                            <p id="ujgaae6WDTfVxuHr"
+                                style="color:#80f0ff;direction:ltr;font-family:YAEw1pyVaO0-0;line-height:1.49999732em;text-align:left;text-transform:none;letter-spacing:0em;">
+                                <span id="uzYlg40WadlZIfwD" style="color:#80f0ff;">Mr. KHOA</span><br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="YKUWxebcYkgQcu8o">
+                    <div id="ILpe8WFwwbS9ex5p" style="display:grid;position:relative;">
+                        <div id="KMsgXdfGJYNDwRet" style="z-index:2;">
+                            <div id="WiB9jo7POs9CEpgC" style="padding-top:87.56613757%;">
+                                <div id="qB26z1bAEvfHrvw4"
+                                    style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
+                                    <div class="animation_container" style="width:100%;height:100%;">
+                                        <div class="animated"
+                                            style="width:100%;height:100%;animation:pan-LEFT-b42da5d4-53c5-4b0d-b135-fca5dfea5764 1111ms 100ms both paused, linear_fade 400ms linear both paused;">
+                                            <div id="G0KItTsCa95k3zaT" style="width:100%;height:100%;opacity:1.0;">
+                                                <div id="jlEyRPSN8ZeQoPux"
+                                                    style="transform:scale(1, 1);width:100%;height:100%;overflow:hidden;position:relative;">
+                                                    <div id="yCjdp1A16iYw6LnT"
+                                                        style="width:calc(100% * max(1, var(--scale-fill, 1)));height:calc(100% / min(1, var(--scale-fill, 1)));position:absolute;top:50%;left:50%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
+                                                        <img src="./assets/images/7b368cba0ecf9e1cadfac2d7c4f73f68.svg"
+                                                            alt="Quotations Typography Simple Icon" loading="lazy"
+                                                            style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%;transform:translate(-50%, -50%) rotate(0deg);">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="OLdi3ykBxm7X0mUw" style="z-index:3;">
+                            <div id="FnrUF450LJX19Wrz" style="box-sizing:border-box;width:100%;height:100%;">
+                                <div class="animation_container" style="width:100%;height:100%;">
+                                    <div class="animated"
+                                        style="width:100%;height:100%;animation:pan-LEFT-da6f764f-1030-4887-b10c-a042603ea1e5 1111ms 100ms both paused, linear_fade 400ms linear both paused;">
+                                        <div id="hgOc4JCnSgKzuahL"
+                                            style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                                            <p id="CiWSFDpf41um6wUr"
+                                                style="color:#ffffff;direction:ltr;font-family:YAEw1pyVaO0-0;margin-left:0em;line-height:1.49999732em;text-align:left;text-transform:none;letter-spacing:0em;">
+                                                <span id="nfZnnrC10A2gHmS9" style="color:#ffffff;">A team of creatives
+                                                    and a team of technicians are ready for the task force!</span><br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="htLzufccjU3pmEMO" style="z-index:5;">
+                            <div id="KtdZrxfEEaKVvpRc" style="padding-top:14.65438298%;">
+                                <div id="uscO5LlPscHiox8M"
+                                    style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
+                                    <div class="animation_container" style="width:100%;height:100%;">
+                                        <div class="animated"
+                                            style="width:100%;height:100%;animation:pan-LEFT-e3eff5b8-5772-4161-8b4b-f9387d07beb1 1111ms 100ms both paused, linear_fade 400ms linear both paused;">
+                                            <svg id="v2BoXWs6ReRPwrA4" viewBox="0 0 47.767278984510995 7.0"
+                                                preserveAspectRatio="none"
+                                                style="display:block;width:100%;height:100%;overflow:visible;opacity:1.0;min-height:1px;stroke:#ffffff;fill:#ffffff;background:url(%27data_image/png%3bbase64%2c%27.html);">
+                                                <g id="z8un981AAwkmMD4Z">
+                                                    <path d="M0,3.5 L47.76727898,3.5"
+                                                        style="fill:none;stroke-width:7px;stroke-linecap:butt;"></path>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="NiyJkBhIWb92K0AH" style="z-index:4;">
+                            <div id="JqzHaYRrd7GcKsoQ" style="box-sizing:border-box;width:100%;height:100%;">
+                                <div class="animation_container" style="width:100%;height:100%;">
+                                    <div class="animated"
+                                        style="width:100%;height:100%;animation:pan-LEFT-827d9a39-c9aa-4b47-99c5-5a5cc3acb490 1111ms 100ms both paused, linear_fade 400ms linear both paused;">
+                                        <div id="XvONKhYusgodOQkG"
+                                            style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                                            <p id="HpLe3ENtTEWZ5BMU"
+                                                style="color:#ffffff;direction:ltr;font-family:YAEw1mAb2y8-0;line-height:1.45312727em;text-align:left;text-transform:uppercase;letter-spacing:0em;">
+                                                <span id="MaeFpPxkyk4teAh0"
+                                                    style="color:#ffffff;font-weight:700;">STRATEGY AND
+                                                    OPERATIONS</span><br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="W08l7oZXyzjgIFjS">
+                    <div id="Q4qBSIuVjyw7VK18" style="display:grid;position:relative;">
+                        <div id="KCtyWe0fHvhxOV9v" style="z-index:17;">
+                            <div id="P3sDceQ19M4BqEg3" style="padding-top:87.56613757%;transform:rotate(0deg);">
+                                <div id="P8ZUxOxsXquXCZ3t"
+                                    style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
+                                    <div id="d2YFP1d13sWD2uaq" style="width:100%;height:100%;opacity:1.0;">
+                                        <div id="m0dJA8m2ZTS4I7fB"
+                                            style="transform:scale(1, 1);width:100%;height:100%;overflow:hidden;position:relative;">
+                                            <div id="tTWYXUQIDaggRifu"
+                                                style="width:calc(100% * max(1, var(--scale-fill, 1)));height:calc(100% / min(1, var(--scale-fill, 1)));position:absolute;top:50%;left:50%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
+                                                <img src="./assets/images/7b368cba0ecf9e1cadfac2d7c4f73f68.svg"
+                                                    alt="Quotations Typography Simple Icon" loading="lazy"
+                                                    style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%;transform:translate(-50%, -50%) rotate(0deg);">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="RXFzsbbt72YMozKu" style="z-index:19;">
+                            <div id="oxAqGXd2cC1tqpC3"
+                                style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
+                                <div id="ZpYPh4zuhFuz9L0X"
+                                    style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                                    <p id="XyLnWUiMZk9d34Nb"
+                                        style="color:#ffffff;font-family:YAEw1pyVaO0-0;line-height:1.49518627em;"><span
+                                            id="E6IBiF25XdZaikG4" style="color:#ffffff;">Every project is a
+                                            story,</span><br></p>
+                                    <p id="i6Z2Q4O49xEElCc9"
+                                        style="color:#ffffff;direction:ltr;font-family:YAEw1pyVaO0-0;line-height:1.49518627em;text-align:left;text-transform:none;letter-spacing:0em;">
+                                        <span id="Z9EjOGDqy4IyTtMC" style="color:#ffffff;">let&#x27;s write ours
+                                            together.</span><br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="ItigD9WjuZ7zjlSw" style="z-index:18;">
+                            <div id="S48M7kZCc3lTOWEo" style="padding-top:14.65438298%;transform:rotate(0deg);">
+                                <div id="Ce0GdkduiDINYvy4"
+                                    style="position:absolute;top:0px;left:0px;width:100%;height:100%;"><svg
+                                        id="ZPnSFoz8JY29RFMb" viewBox="0 0 53.055370134802615 7.774937129327441"
+                                        preserveAspectRatio="none"
+                                        style="display:block;width:100%;height:100%;overflow:visible;opacity:1.0;min-height:1px;stroke:#ffffff;fill:#ffffff;background:url(%27data_image/png%3bbase64%2c%27.html);">
+                                        <g id="HfxxNq3a01Vlh8AE">
+                                            <path d="M0,3.88746856 L53.05537013,3.88746856"
+                                                style="fill:none;stroke-width:8px;stroke-linecap:butt;"></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="rmGDWrMxnPvr1eyv" style="z-index:20;">
+                            <div id="t6HAJrVcuju1I7rP"
+                                style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
+                                <div id="SZ3yzgxJescjrzva"
+                                    style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                                    <p id="OGMyI6nxsD6iVpyN"
+                                        style="color:#ffffff;direction:ltr;font-family:YAEw1mAb2y8-0;line-height:1.47710428em;text-align:left;text-transform:uppercase;letter-spacing:0em;">
+                                        <span id="mrM6ba8eNPATVIf2" style="color:#ffffff;font-weight:700;">STUDY OF
+                                            POTENTIALITY</span><br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="vDssDWqKTaIdW3od">
+                    <div id="WdtptODmPJouCWxp" style="display:grid;position:relative;">
+                        <div id="u3mY6JwTp3qcvX49" style="z-index:7;">
+                            <div id="Re788sdGOrl3HxHO" style="padding-top:87.56613757%;">
+                                <div id="iHzHw6bqK7TLINNm"
+                                    style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
+                                    <div class="animation_container" style="width:100%;height:100%;">
+                                        <div class="animated"
+                                            style="width:100%;height:100%;animation:pan-RIGHT-9c1f81b3-6d5f-465a-aaf3-11f748eb105e 1111ms 100ms both paused, linear_fade 400ms linear both paused;">
+                                            <div id="PA3YPM4y3jDsbxNL" style="width:100%;height:100%;opacity:1.0;">
+                                                <div id="ZxBX3WFVgzVaHKlj"
+                                                    style="transform:scale(1, 1);width:100%;height:100%;overflow:hidden;position:relative;">
+                                                    <div id="T7vK0p1EpsWudqIB"
+                                                        style="width:calc(100% * max(1, var(--scale-fill, 1)));height:calc(100% / min(1, var(--scale-fill, 1)));position:absolute;top:50%;left:50%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
+                                                        <img src="./assets/images/7b368cba0ecf9e1cadfac2d7c4f73f68.svg"
+                                                            alt="Quotations Typography Simple Icon" loading="lazy"
+                                                            style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%;transform:translate(-50%, -50%) rotate(0deg);">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="KWrKdIeiWMiimjBR" style="z-index:8;">
+                            <div id="pjhzronnrWrefX28" style="box-sizing:border-box;width:100%;height:100%;">
+                                <div class="animation_container" style="width:100%;height:100%;">
+                                    <div class="animated"
+                                        style="width:100%;height:100%;animation:pan-RIGHT-f6289140-dbd5-422b-b635-20b886392378 1111ms 100ms both paused, linear_fade 400ms linear both paused;">
+                                        <div id="rCpNnPquPXHV0FVL"
+                                            style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                                            <p id="mW1IHLSvZpXIs8Cq"
+                                                style="color:#ffffff;font-family:YAEw1pyVaO0-0;line-height:1.48643884em;">
+                                                <span id="GGsUaJktTqx9RHlQ" style="color:#ffffff;">Focus on what
+                                                    worked,</span><br>
+                                            </p>
+                                            <p id="fDxdo290MWqMZV0l"
+                                                style="color:#ffffff;font-family:YAEw1pyVaO0-0;line-height:1.48643884em;">
+                                                <span id="FzGtJculBrWHVhmH" style="color:#ffffff;">let go of what
+                                                    didn&#x27;t work.</span><br>
+                                            </p>
+                                            <p id="bBpmwFXSX3o22tmR"
+                                                style="color:#ffffff;direction:ltr;font-family:YAEw1pyVaO0-0;margin-left:0em;line-height:1.48643884em;text-align:left;text-transform:none;letter-spacing:0em;">
+                                                <span id="N0uiQWO0tzcyBrEd" style="color:#ffffff;">It seems easy, but do
+                                                    you ever think about it?</span><br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="X6LJn5M7lpHRXAeL" style="z-index:10;">
+                            <div id="vPsGsNDSU1gQkGC8" style="padding-top:14.65438298%;">
+                                <div id="dbry8E0hBMPXQIft"
+                                    style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
+                                    <div class="animation_container" style="width:100%;height:100%;">
+                                        <div class="animated"
+                                            style="width:100%;height:100%;animation:pan-RIGHT-cf031224-b8c1-45f5-9d30-19940942d1c7 1111ms 100ms both paused, linear_fade 400ms linear both paused;">
+                                            <svg id="hb1Ueo9SHf5ugwfv"
+                                                viewBox="0 0 48.202986086857095 7.063850187435037"
+                                                preserveAspectRatio="none"
+                                                style="display:block;width:100%;height:100%;overflow:visible;opacity:1.0;min-height:1px;stroke:#ffffff;fill:#ffffff;background:url(%27data_image/png%3bbase64%2c%27.html);">
+                                                <g id="n5CqViFJcaNJvMIv">
+                                                    <path d="M0,3.53192509 L48.20298609,3.53192509"
+                                                        style="fill:none;stroke-width:7px;stroke-linecap:butt;"></path>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="DCqk38KJYFEVgm4i" style="z-index:9;">
+                            <div id="Ez4mWYZnjTFG5aiN" style="box-sizing:border-box;width:100%;height:100%;">
+                                <div class="animation_container" style="width:100%;height:100%;">
+                                    <div class="animated"
+                                        style="width:100%;height:100%;animation:pan-RIGHT-6b7784f9-98db-4c9f-bfbd-14f5254967e2 1111ms 100ms both paused, linear_fade 400ms linear both paused;">
+                                        <div id="Eok6NqAvwv4JTqrU"
+                                            style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                                            <p id="XxHZ4RmEItiHTQTW"
+                                                style="color:#ffffff;direction:ltr;font-family:YAEw1mAb2y8-0;line-height:1.48644381em;text-align:left;text-transform:uppercase;letter-spacing:0em;">
+                                                <span id="bwwkrZTjDTnlxHMH"
+                                                    style="color:#ffffff;font-weight:700;">ANALYSIS OF THE
+                                                    RESULTS</span><br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><a id="contact" aria-hidden="true" style="visibility:hidden;"></a>
+        <section id="WEl2pN21pAXakuke"
+            style="position:relative;overflow:hidden;display:grid;align-items:center;grid-template-columns:auto 100rem auto;z-index:0;margin-top:-1px;">
+            <div id="lg0ttwNv7COUn4jQ"
+                style="grid-area:1 / 1 / 2 / 4;display:grid;position:absolute;min-height:100%;min-width:100%;">
+                <div id="LJYqwkJN00UEaU2C" style="z-index:0;">
+                    <div id="cRz4TFcCpHVPs3Fx"
+                        style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
+                        <div id="Y50Lh2Qb0KeeVyNb" style="width:100%;height:100%;opacity:1.0;">
+                            <div id="wC9UDKYk7nvO7OQ4" class="video_container"
+                                style="background-color:#0c121c;opacity:1.0;transform:scale(-1, 1);width:100%;height:100%;overflow:hidden;position:relative;">
+                                <div id="xUPkZtLWwmOJvcda"
+                                    style="width:calc(100% * max(1, var(--scale-fill, 1)));height:calc(101.3828125% / min(1, var(--scale-fill, 1)));position:absolute;top:50%;left:50%;opacity:1.0;">
+                                    <video src="./assets/videos/12ebaaa4c4cce7700bbb796ad46521fd.mp4" playsinline=""
+                                        preload="auto" autoplay="" muted="" loop=""
+                                        style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%;transform:translate(-50%, -50%) rotate(0deg);"></video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="XRi3zTGZtqK3TmSq" style="display:grid;position:relative;grid-area:1 / 2 / 2 / 3;">
+                <div id="PATlDxZDqntipg9A" style="z-index:6;">
+                    <div id="QhTnSo3EBeMm1GqI" style="box-sizing:border-box;width:100%;height:100%;">
+                        <div class="animation_container" style="width:100%;height:100%;">
+                            <div class="animated"
+                                style="width:100%;height:100%;animation:fade-LEFT-5cbe8977-3585-40f7-a723-2796370f502a 925ms 100ms both paused;">
+                                <div id="VnpuQFfsfHYppgf0"
+                                    style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                                    <p id="zdeSJlAGHNY7gCxW"
+                                        style="color:#ffffff;direction:ltr;font-family:YAEw1mAb2y8-0;margin-left:0em;line-height:0.98750123em;text-align:left;text-transform:uppercase;letter-spacing:0.034em;">
+                                        <span id="rKPcqXYxjpDri7Fu"
+                                            style="text-decoration-line:none;color:#ffffff;font-style:normal;font-weight:700;">Get
+                                            in touch with us</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Q2jCojhWDvWIeAR0" style="z-index:17;">
+                    <div id="Pxft29BzndrpJVSb" style="padding-top:78.25%;transform:rotate(0deg);">
+                        <div id="Sp8xhVEaEXArtgsq" style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
+                            <div id="hIvL6dsUk4Eyv4kt" style="width:100%;height:100%;opacity:1.0;">
+                                <div id="OsYsWWtwpbEjgYcu"
+                                    style="transform:scale(1, 1);width:100%;height:100%;overflow:hidden;position:relative;">
+                                    <div id="C49tteX6aeKnl3Id"
+                                        style="width:calc(100% * max(1, var(--scale-fill, 1)));height:calc(100% / min(1, var(--scale-fill, 1)));position:absolute;top:50%;left:50%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
+                                        <img src="./assets/images/dfb5a7804653cbd167dfda472b7347f0.svg"
+                                            alt="Connection dots technology element" loading="lazy"
+                                            style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%;transform:translate(-50%, -50%) rotate(0deg);">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="xh507LA2ItaRZDaa">
+                    <div id="JCh9TZODDYTdLkeg" style="display:grid;position:relative;">
+                        <div id="giei1aAdWyJr3UOG" style="z-index:15;">
+                            <div id="vwwjgR5HBAd0ocob"
+                                style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
+                                <div id="v5NjSyi1jHrdp8VN"
+                                    style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                                    <p id="sDgETmIjoqBHPcNa"
+                                        style="color:#ffffff;direction:ltr;font-family:YAEw1mAb2y8-0;margin-left:0em;line-height:1.47223858em;text-align:left;text-transform:uppercase;letter-spacing:0em;">
+                                        <span id="TqsfmXRhb3jD9BtX"
+                                            style="color:#ffffff;font-weight:700;">Address</span><br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="S3lATqmbuOpxTcuJ" style="z-index:14;">
+                            <div id="ExRp3r7LTtaSJVWp"
+                                style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
+                                <div id="zTSBXnmk6S3wLzVW"
+                                    style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                                    <p id="QNB4jJGCkTbmVoCV"
+                                        style="color:#ffffff;direction:ltr;font-family:YAEw1pyVaO0-0;margin-left:0em;line-height:1.45312727em;text-align:left;text-transform:none;letter-spacing:0em;">
+                                        <span id="eLE68gh53OsGC3eg" style="color:#ffffff;">Phuong Son, Nghi Dien, Nghi
+                                            Loc, Nghe An, Viet Nam</span><br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="v3z7ojsqHGU69ndR">
+                    <div id="RRSYbzySLJN8eDtX" style="display:grid;position:relative;">
+                        <div id="q6XgHZ24gplYrVHh" style="z-index:9;">
+                            <div id="miT6p5MH3vAqxUGF"
+                                style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
+                                <div id="WytHrycnay6fJQnP"
+                                    style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                                    <p id="r5hhA4V0Z32PbpJd"
+                                        style="color:#ffffff;direction:ltr;font-family:YAEw1mAb2y8-0;margin-left:0em;line-height:1.47223858em;text-align:left;text-transform:uppercase;letter-spacing:0em;">
+                                        <span id="OpNKYlrLKHuLQfUH"
+                                            style="text-decoration-line:none;color:#ffffff;font-style:normal;font-weight:700;">Phone</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="KJXX82gSARZ15thb" style="z-index:8;">
+                            <div id="MnRvqAtUkpw66Mg7"
+                                style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
+                                <div id="vWpbFOhkXrva9Ohr"
+                                    style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                                    <p id="VtW8lqGMMO60klU4"
+                                        style="color:#ffffff;direction:ltr;font-family:YAEw1pyVaO0-0;margin-left:0em;line-height:1.45833941em;text-align:left;text-transform:none;letter-spacing:0em;">
+                                        <span id="ZhqAxj3xKTughxjt" style="color:#ffffff;">(+84) 911785925</span><br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="orLqfJwEFWnLeZMv">
+                    <div id="GuJvwrAFr4Awh7ry" style="display:grid;position:relative;">
+                        <div id="t6fsETM1ysOVxAmq" style="z-index:12;">
+                            <div id="H7rfTsfQ6UXrZf7i" style="box-sizing:border-box;width:100%;height:100%;">
+                                <div class="animation_container" style="width:100%;height:100%;">
+                                    <div class="animated"
+                                        style="width:100%;height:100%;animation:pan-RIGHT-966a077f-3ea8-4bbd-b48d-8cf425dd7526 781ms 100ms both paused, linear_fade 400ms linear both paused;">
+                                        <div id="JeGSyq01DNkPMo5e"
+                                            style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                                            <p id="tfV5Tk4RShxyTvLk"
+                                                style="color:#ffffff;direction:ltr;font-family:YAEw1mAb2y8-0;margin-left:0em;line-height:1.47223858em;text-align:left;text-transform:uppercase;letter-spacing:0em;">
+                                                <span id="AzDaQXOdP0Ad6llV"
+                                                    style="text-decoration-line:none;color:#ffffff;font-style:normal;font-weight:700;">Email</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="LPhidis06FdTqM7A" style="z-index:11;">
+                            <div id="Xspz0Kree2fFeU96" style="box-sizing:border-box;width:100%;height:100%;">
+                                <div class="animation_container" style="width:100%;height:100%;">
+                                    <div class="animated"
+                                        style="width:100%;height:100%;animation:pan-RIGHT-9a8cfe53-ded5-421f-b7fa-b3af7a3beaac 781ms 100ms both paused, linear_fade 400ms linear both paused;">
+                                        <div id="iYui8O7CeajsSHnu"
+                                            style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                                            <p id="szZT9r3BRLc5ol77"
+                                                style="color:#ffffff;direction:ltr;font-family:YAEw1pyVaO0-0;margin-left:0em;line-height:1.45833941em;text-align:left;text-transform:none;letter-spacing:0em;">
+                                                <span id="WvxXgvKWOA6eeN2q"
+                                                    style="color:#ffffff;">contact@tmmedia.net.vn</span><br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tcMfKaBN4B9pdLQg">
+                    <div id="s87HcqqrazpLuGh1" style="display:grid;position:relative;">
+                        <div id="ERDd0uvmD1qXv07O" style="z-index:2;">
+                            <div id="h4nXGzqK19yAAnEb"
+                                style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
+                                <div id="tTItqxiOXQuojwsw"
+                                    style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                                    <p id="QYKbRfwFw87BnOBY"
+                                        style="color:#ffffff;direction:ltr;font-family:YAEw1mAb2y8-0;margin-left:0em;line-height:1.49494312em;text-align:left;text-transform:uppercase;letter-spacing:0em;">
+                                        <span id="FnSz8KQTczr19hMg"
+                                            style="text-decoration-line:none;color:#ffffff;font-style:normal;font-weight:700;">social</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="yEodSiJaZeGFYWkI" style="z-index:4;">
+                            <div id="F0vQDluiT2DsvU3r" style="padding-top:99.63636364%;transform:rotate(0deg);">
+                                <div id="c9rIWBOicyXOMOYE"
+                                    style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
+                                    <div id="ytLuWgqgfcEGQx6p" style="width:100%;height:100%;opacity:1.0;">
+                                        <div id="xtt0M33xS4Q2ApGI"
+                                            style="transform:scale(1, 1);width:100%;height:100%;overflow:hidden;position:relative;">
+                                            <div id="oR2rK9MP4J5QKDwR"
+                                                style="width:calc(100% * max(1, var(--scale-fill, 1)));height:calc(100% / min(1, var(--scale-fill, 1)));position:absolute;top:50%;left:50%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
+                                                <img src="./assets/images/74ec6b8545ed1d2da59d1d1e63e12975.svg"
+                                                    alt="Simple Facebook Icon" loading="lazy"
+                                                    style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%;transform:translate(-50%, -50%) rotate(0deg);">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="w6CWjQmd1n0jHZlL" style="z-index:5;">
+                            <div id="lAtW7aG2JwwxF95d" style="padding-top:100%;transform:rotate(0deg);">
+                                <div id="sAPfvHdz8OL2hg04"
+                                    style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
+                                    <div id="BBlQlzB6aeDIUO37" style="width:100%;height:100%;opacity:1.0;">
+                                        <div id="ECkDqvwXpnLMXQAY"
+                                            style="transform:scale(1, 1);width:100%;height:100%;overflow:hidden;position:relative;">
+                                            <div id="md0WnknH2fXNTUGv"
+                                                style="width:calc(100% * max(1, var(--scale-fill, 1)));height:calc(100% / min(1, var(--scale-fill, 1)));position:absolute;top:50%;left:50%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
+                                                <img src="./assets/images/450e13450c1b36cb63b46b87f129a3bf.svg"
+                                                    alt="Simple Twitter Icon" loading="lazy"
+                                                    style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%;transform:translate(-50%, -50%) rotate(0deg);">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="lFvtEdVJuAeDYkwZ" style="z-index:3;">
+                            <div id="XQ7td09eP8pizGKT" style="padding-top:100%;transform:rotate(0deg);">
+                                <div id="IrmAfLbwX8UF5Pdk"
+                                    style="position:absolute;top:0px;left:0px;width:100%;height:100%;">
+                                    <div id="wmNaa834u6gmWYsq" style="width:100%;height:100%;opacity:1.0;">
+                                        <div id="HMPuF9LCQyB7hCMc"
+                                            style="transform:scale(1, 1);width:100%;height:100%;overflow:hidden;position:relative;">
+                                            <div id="Y45xPh9MVaEEy1HE"
+                                                style="width:calc(100% * max(1, var(--scale-fill, 1)));height:calc(100% / min(1, var(--scale-fill, 1)));position:absolute;top:50%;left:50%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
+                                                <img src="./assets/images/a5f675633ff811108876d1551a12079e.svg"
+                                                    alt="Simple Instagram Icon" loading="lazy"
+                                                    style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%;transform:translate(-50%, -50%) rotate(0deg);">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="jCJqxGmlp7qmG43i" style="z-index:16;">
+                    <div id="XhqNWpKFGAaNn5W3"
+                        style="box-sizing:border-box;width:100%;height:100%;transform:rotate(0deg);">
+                        <div id="PSwpd3Hmgg3Ksttf"
+                            style="opacity:1.0;display:flex;box-sizing:border-box;flex-direction:column;justify-content:flex-start;width:100%;height:100%;">
+                            <p id="JZEiRGstYG7DnPQO"
+                                style="color:#ffffff;font-family:YACkoC_IHiw-0;line-height:1.36356819em;text-align:center;">
+                                <span id="ZjtGBsdYxCIyofCb" style="color:#ffffff;">Copyright 2024 © Đặng Hữu Tiến</span><br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="assets/js/main.min.js"></script>
+    </div>
+</body>
+</html>
